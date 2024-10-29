@@ -1,0 +1,176 @@
+/* Reset de márgenes y padding */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background: -webkit-linear-gradient(left, #00c6ff, #0072ff); /* Gradiente de fondo */
+    background: -moz-linear-gradient(left, #00c6ff, #0072ff); /* Gradiente de fondo para Firefox */
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradiente de fondo */
+    color: white;
+    line-height: 1.6;
+    -webkit-transition: background 0.5s ease; /* Prefijo para Safari */
+    -moz-transition: background 0.5s ease; /* Prefijo para Firefox */
+    transition: background 0.5s ease; /* Transición de fondo */
+}
+
+/* Encabezado */
+header {
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    /* -moz-border-radius: 10px;  Se ha comentado o eliminado */
+}
+
+/* Navegación */
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: rgb(205, 192, 14);
+    text-decoration: none;
+    -webkit-transition: color 0.3s ease; /* Prefijo para Safari */
+    -moz-transition: color 0.3s ease; /* Prefijo para Firefox */
+    transition: color 0.3s ease; /* Transición de color */
+}
+
+nav a:hover {
+    color: #914513; /* Color al pasar el ratón */
+}
+
+/* Secciones */
+section {
+    padding: 20px;
+    margin: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+    border-radius: 10px; /* Mantén solo esta línea */
+    /* -moz-border-radius: 10px;  Se ha comentado o eliminado */
+}
+
+/* Flexbox para los servicios */
+.services-container {
+    display: -webkit-box; /* Prefijo para Safari */
+    display: -moz-box; /* Prefijo para Firefox */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Espacio uniforme entre elementos */
+}
+
+.service-card {
+    position: relative; /* Para permitir el uso de z-index */
+     /* Asegura que las tarjetas estén en la parte superior */
+    background: rgba(255, 255, 255, 0.1); /* Fondo blanco con transparencia */
+    color: white;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+    width: 300px; /* Ancho fijo para las tarjetas */
+    text-align: center;
+    -webkit-transition: transform 0.3s ease; /* Prefijo para Safari */
+    -moz-transition: transform 0.3s ease; /* Prefijo para Firefox */
+    transition: transform 0.3s ease; /* Transición más rápida */
+}
+
+/* Escala al pasar el ratón */
+.service-card:hover {
+    transform: scale(1.1); /* Escala ligeramente la tarjeta */
+}
+
+/* Estilos para las imágenes */
+.service-card img {
+    width: 100%; /* Imágenes se adaptan al tamaño de la tarjeta */
+    border-radius: 10px;
+    -moz-border-radius: 10px; /* Compatibilidad con Firefox */
+}
+
+/* Contenedor de videos */
+.video-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre videos */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px; /* Espacio superior */
+}
+
+/* Media Query para Firefox 18.0.2 y pantallas pequeñas (menos de 600px) */
+@media screen and (-moz-min-device-pixel-ratio: 1) and (max-width: 599px) {
+    section {
+        background-color: rgb(239, 239, 123); /* Cambia el color de fondo a amarillo */
+    }
+}
+
+/* Media Query para Firefox 18.0.2 y pantallas medianas (600px - 900px) */
+@media screen and (-moz-min-device-pixel-ratio: 1) and (min-width: 600px) and (max-width: 899px) {
+    section {
+        background-color: rgba(255, 165, 0, 0.8); /* Cambia el color de fondo a anaranjado */
+    }
+}
+
+/* Media Query para Firefox 18.0.2 y pantallas grandes (más de 900px) */
+@media screen and (-moz-min-device-pixel-ratio: 1) and (min-width: 900px) {
+    section {
+        background-color: rgba(255, 0, 0, 0.6); /* Puedes cambiar a otro color si lo deseas */
+    }
+}
+
+/* Media Queries para pantallas pequeñas */
+@media screen and (max-width: 600px) {
+    .service-card {
+        width: 100%; /* Hacer que las tarjetas ocupen el ancho completo en pantallas pequeñas */
+        margin: 10px 0; /* Margen superior e inferior */
+    }
+}
+
+/* Media Queries para pantallas medianas (600px - 900px) */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    .service-card {
+        width: 250px; /* Ancho fijo para pantallas medianas */
+        margin: 15px; /* Mayor margen */
+    }
+}
+
+/* Media Queries para pantallas grandes (más de 900px) */
+@media screen and (min-width: 901px) {
+    .services-container {
+        display: flex; /* Asegurando que sea flex en pantallas grandes */
+        justify-content: space-between; /* Espacio entre tarjetas en pantallas grandes */
+    }
+    
+    .service-card {
+        width: 300px; /* Ancho de tarjeta para pantallas grandes */
+        margin: 20px; /* Espacio adicional */
+        padding: 20px; /* Más espacio interno */
+    }
+    
+    h2 {
+        font-size: 2.5em; /* Aumentar tamaño de encabezado en pantallas grandes */
+    }
+    
+    footer {
+        font-size: 1.2em; /* Aumentar tamaño de texto en el pie de página */
+    }
+}
+
